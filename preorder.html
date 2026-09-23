@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Design Your Cake — Empress Patisserie</title>
+  <meta name="description" content="Pre-order a custom cake from Empress Patisserie, Damascus. Choose the shape, flavours, fillings and chocolate. اصنع كيكتك على ذوقك." />
+  <link rel="icon" href="assets/img/logo-dark.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Cinzel:wght@400;500;600&family=Manrope:wght@300;400;500;600&family=Amiri:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="preorder.css" />
+</head>
+<body class="page-builder">
+
+  <div class="cursor" id="cursor"><span class="cursor__label">View</span></div>
+
+  <header class="nav" id="nav">
+    <a href="index.html" class="nav__logo" aria-label="Empress Patisserie home">
+      <img src="assets/img/logo-dark.png" alt="Empress Patisserie" />
+    </a>
+    <nav class="nav__links">
+      <a href="index.html#story">Our Story</a>
+      <a href="index.html#collection">Collection</a>
+      <a href="index.html#offerings">Menu</a>
+      <a href="preorder.html" class="is-active">Design Your Cake</a>
+      <a href="index.html#visit">Visit</a>
+    </nav>
+    <a href="#builder" class="btn btn--dark magnetic nav__cta"><span>Start Designing</span></a>
+    <button class="nav__burger" id="burger" aria-label="Open menu"><span></span><span></span></button>
+  </header>
+
+  <div class="menu" id="menu">
+    <a href="index.html">Home</a>
+    <a href="index.html#collection">Collection</a>
+    <a href="preorder.html">Design Your Cake</a>
+    <a href="index.html#visit">Visit</a>
+    <p class="menu__ar">اصنع كيكتك على ذوقك</p>
+  </div>
+
+  <main>
+    <!-- ============ HEADER ============ -->
+    <section class="b-hero">
+      <p class="eyebrow b-hero__eyebrow"><span class="line"></span> Pre-order · طلب مسبق</p>
+      <h1 class="b-hero__title">
+        <span class="split-line"><span>Design your</span></span>
+        <span class="split-line"><span><em>own</em> masterpiece</span></span>
+      </h1>
+      <p class="b-hero__ar" dir="rtl">اختَر الشكل، النكهة، الحشوات ونوع الشوكولا… ونحن نصنعها لك</p>
+      <p class="b-hero__lead">Choose the shape, sponge, fillings, chocolate and finish, and watch your cake come to life. Send it to us and the Empress team will confirm the price and pickup time on WhatsApp.</p>
+      <ol class="b-hero__steps">
+        <li><b>01</b> Design</li><li><b>02</b> Send on WhatsApp</li><li><b>03</b> We confirm &amp; bake</li>
+      </ol>
+    </section>
+
+    <!-- ============ BUILDER ============ -->
+    <section class="builder" id="builder">
+      <form class="builder__form" id="orderForm" novalidate>
+        <!-- steps rendered by preorder.js -->
+        <div id="steps"></div>
+
+        <fieldset class="step step--details" id="stepDetails">
+          <legend class="step__head">
+            <span class="step__num">✦</span>
+            <span class="step__title">Your details <small dir="rtl">معلومات الطلب</small></span>
+          </legend>
+          <div class="fields">
+            <label class="field"><span>Full name · الاسم</span><input type="text" name="name" required autocomplete="name" /></label>
+            <label class="field"><span>Phone / WhatsApp · الهاتف</span><input type="tel" name="phone" required autocomplete="tel" placeholder="09xx xxx xxx" dir="ltr" /></label>
+            <label class="field"><span>Date · تاريخ الاستلام</span><input type="date" name="date" required /></label>
+            <label class="field"><span>Time · الوقت</span><input type="time" name="time" /></label>
+            <div class="field field--full">
+              <span>Pickup or delivery · استلام أو توصيل</span>
+              <div class="seg" id="deliverySeg">
+                <button type="button" class="seg__btn is-on" data-v="pickup">Pickup from store · استلام من المحل</button>
+                <button type="button" class="seg__btn" data-v="delivery">Delivery in Damascus · توصيل</button>
+              </div>
+            </div>
+            <label class="field field--full" id="addressField" hidden><span>Delivery address · العنوان</span><input type="text" name="address" /></label>
+            <label class="field field--full"><span>Allergies or notes · ملاحظات</span><textarea name="notes" rows="3" placeholder="Nut allergy, colour references, event theme…"></textarea></label>
+          </div>
+          <p class="note">Please order at least <b>48 hours</b> in advance. The final price is confirmed by Empress. · يرجى الطلب قبل ٤٨ ساعة على الأقل</p>
+        </fieldset>
+      </form>
+
+      <!-- ============ LIVE PREVIEW ============ -->
+      <aside class="preview" id="preview">
+        <div class="preview__card">
+          <div class="preview__top">
+            <span class="eyebrow"><span class="line"></span> Live preview</span>
+            <span class="preview__pct"><b id="pct">0</b>% complete</span>
+          </div>
+          <div class="preview__bar"><i id="pctBar"></i></div>
+
+          <div class="preview__stage" id="stage">
+            <svg id="cakeSvg" viewBox="0 0 400 400" role="img" aria-label="Preview of your cake"></svg>
+          </div>
+
+          <div class="preview__slice">
+            <span class="preview__slice-label">Inside · من الداخل</span>
+            <div class="slice" id="slice"></div>
+          </div>
+
+          <ul class="summary" id="summary"></ul>
+
+          <button type="button" class="btn btn--gold magnetic preview__send" id="sendBtn">
+            <span>Send Pre-order on WhatsApp</span>
+          </button>
+          <p class="preview__err" id="formErr" role="alert"></p>
+        </div>
+      </aside>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer__big" aria-hidden="true">
+      <span>E</span><span>M</span><span>P</span><span>R</span><span>E</span><span>S</span><span>S</span>
+    </div>
+    <div class="footer__row">
+      <p>© <span id="year"></span> Empress Patisserie · Damascus</p>
+      <p class="ar" dir="rtl">حلويات امبريس</p>
+      <a href="index.html" class="footer__top">← Back to home</a>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha384-g4NTh/Iv5PPU4xPyhEWqPcwtNXOvdaDI8LLnyYfyNZOjKJeYQyjzQ9X5275eBjpt" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" integrity="sha384-Z3REaz79l2IaAZqJsSABtTbhjgOUYyV3p90XNnAPCSHg3EMTz1fouunq9WZRtj3d" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js" integrity="sha384-B2WBjDzEjJpYvhmi2UyEn7rektqkf5suS6sNoyyrf0EBAwBHdkiXxIlU0V5Ru2ed" crossorigin="anonymous"></script>
+  <script src="main.js"></script>
+  <script src="preorder.js"></script>
+</body>
+</html>

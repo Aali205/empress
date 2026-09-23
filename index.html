@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Empress Patisserie — Damascus</title>
+  <meta name="description" content="Empress Patisserie — luxury cakes, ice cream & fresh juice in Damascus, Syria. حلويات امبريس — دمشق." />
+  <link rel="icon" href="assets/img/logo-dark.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Cinzel:wght@400;500;600&family=Manrope:wght@300;400;500;600&family=Amiri:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- ============ PRELOADER ============ -->
+  <div class="loader" id="loader">
+    <div class="loader__inner">
+      <svg class="loader__crown" viewBox="0 0 120 80" aria-hidden="true">
+        <path d="M14 66 L14 34 L32 50 L46 24 L60 46 L74 24 L88 50 L106 34 L106 66 Z" />
+        <line x1="14" y1="72" x2="106" y2="72" />
+        <circle cx="14" cy="28" r="5" /><circle cx="46" cy="18" r="5" /><circle cx="60" cy="40" r="0" />
+        <circle cx="74" cy="18" r="5" /><circle cx="106" cy="28" r="5" /><circle cx="60" cy="12" r="5" />
+      </svg>
+      <div class="loader__word" aria-label="Empress">
+        <span>E</span><span>M</span><span>P</span><span>R</span><span>E</span><span>S</span><span>S</span>
+      </div>
+      <div class="loader__sub">Patisserie · Damascus</div>
+      <div class="loader__count"><span id="loaderCount">0</span>%</div>
+    </div>
+    <div class="loader__panel loader__panel--top"></div>
+    <div class="loader__panel loader__panel--bottom"></div>
+  </div>
+
+  <!-- ============ CURSOR ============ -->
+  <div class="cursor" id="cursor"><span class="cursor__label">View</span></div>
+
+  <!-- ============ NAV ============ -->
+  <header class="nav" id="nav">
+    <a href="#top" class="nav__logo" aria-label="Empress Patisserie home">
+      <img src="assets/img/logo-dark.png" alt="Empress Patisserie" />
+    </a>
+    <nav class="nav__links">
+      <a href="#story">Our Story</a>
+      <a href="#collection">Collection</a>
+      <a href="#offerings">Menu</a>
+      <a href="preorder.html">Design Your Cake</a>
+      <a href="#visit">Visit</a>
+    </nav>
+    <a href="https://wa.me/963985122225" target="_blank" rel="noopener" class="btn btn--dark magnetic nav__cta">
+      <span>Order Now</span>
+    </a>
+    <button class="nav__burger" id="burger" aria-label="Open menu"><span></span><span></span></button>
+  </header>
+
+  <div class="menu" id="menu">
+    <a href="#story">Our Story</a>
+    <a href="#collection">Collection</a>
+    <a href="#offerings">Menu</a>
+    <a href="preorder.html">Design Your Cake</a>
+    <a href="#visit">Visit</a>
+    <p class="menu__ar">حلويات امبريس — دمشق</p>
+  </div>
+
+  <main id="top">
+
+    <!-- ============ HERO ============ -->
+    <section class="hero" id="hero">
+      <div class="hero__bg-word" aria-hidden="true">EMPRESS</div>
+
+      <div class="hero__content">
+        <p class="eyebrow hero__eyebrow"><span class="line"></span> Luxury Patisserie · Damascus</p>
+        <h1 class="hero__title">
+          <span class="split-line"><span>The Art of</span></span>
+          <span class="split-line"><span><em>Royal</em> Sweetness</span></span>
+        </h1>
+        <p class="hero__ar" dir="rtl">فنّ الحلويات الملكية</p>
+        <p class="hero__lead">Handcrafted cakes, artisan ice cream and freshly pressed juice, made for the moments worth celebrating.</p>
+        <div class="hero__actions">
+          <a href="#collection" class="btn btn--dark magnetic"><span>Explore the Collection</span></a>
+          <a href="preorder.html" class="btn btn--ghost magnetic"><span>Design Your Cake</span></a>
+        </div>
+      </div>
+
+      <div class="hero__visual">
+        <div class="hero__frame" data-cursor="Taste">
+          <img src="assets/img/cake5.jpg" alt="Empress strawberry royale cake" class="hero__img" />
+        </div>
+        <div class="hero__float hero__float--a"><img src="assets/img/cake13.jpg" alt="" /></div>
+        <div class="hero__float hero__float--b"><img src="assets/img/cake12.jpg" alt="" /></div>
+        <svg class="badge" viewBox="0 0 200 200" aria-hidden="true">
+          <defs><path id="circlePath" d="M100,100 m-78,0 a78,78 0 1,1 156,0 a78,78 0 1,1 -156,0" /></defs>
+          <text><textPath href="#circlePath">EMPRESS · PATISSERIE · ICE CREAM · JUICE · </textPath></text>
+          <g transform="translate(70 76) scale(0.5)">
+            <path d="M14 66 L14 34 L32 50 L46 24 L60 46 L74 24 L88 50 L106 34 L106 66 Z" />
+          </g>
+        </svg>
+      </div>
+
+      <div class="hero__scroll"><span>Scroll</span><i></i></div>
+    </section>
+
+    <!-- ============ MARQUEE ============ -->
+    <section class="marquee" aria-hidden="true">
+      <div class="marquee__track" id="marquee">
+        <span>Patisserie</span><b>✦</b><span>Ice Cream</span><b>✦</b><span>Fresh Juice</span><b>✦</b><span>Celebration Cakes</span><b>✦</b><span class="ar">حلويات امبريس</span><b>✦</b>
+        <span>Patisserie</span><b>✦</b><span>Ice Cream</span><b>✦</b><span>Fresh Juice</span><b>✦</b><span>Celebration Cakes</span><b>✦</b><span class="ar">حلويات امبريس</span><b>✦</b>
+      </div>
+    </section>
+
+    <!-- ============ STORY ============ -->
+    <section class="story" id="story">
+      <div class="story__grid">
+        <div class="story__text">
+          <p class="eyebrow"><span class="line"></span> Our Story</p>
+          <h2 class="story__statement" id="statement">
+            In the heart of Damascus, Empress crafts every cake like a crown jewel. Rich chocolate, ripe strawberries, delicate macarons and gold-kissed details, made to turn an ordinary day into a royal occasion.
+          </h2>
+          <div class="story__sign">
+            <img src="assets/img/logo-dark.png" alt="Empress Patisserie" />
+            <p dir="rtl" class="ar">حلاوة، كرم، ونكهات لا تُنسى</p>
+          </div>
+        </div>
+        <div class="story__images">
+          <div class="story__img story__img--1" data-speed="-0.15"><img src="assets/img/cake4.jpg" alt="Empress fruit crown cake" /></div>
+          <div class="story__img story__img--2" data-speed="0.12"><img src="assets/img/cake1.jpg" alt="Empress chocolate caramel cake" /></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ COLLECTION (horizontal) ============ -->
+    <section class="collection" id="collection">
+      <div class="collection__pin">
+        <div class="collection__head">
+          <p class="eyebrow eyebrow--light"><span class="line"></span> Signature Collection</p>
+          <h2 class="section-title section-title--light">Cakes fit for <em>royalty</em></h2>
+          <div class="collection__progress"><i id="hProgress"></i></div>
+        </div>
+        <div class="collection__track" id="hTrack">
+          <!-- cards injected by main.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ ZOOM REVEAL ============ -->
+    <section class="reveal" id="reveal">
+      <div class="reveal__sticky">
+        <div class="reveal__media" id="revealMedia">
+          <img src="assets/img/cake9.jpg" alt="Empress chocolate donut cake" />
+        </div>
+        <div class="reveal__text">
+          <p class="eyebrow eyebrow--light"><span class="line"></span> Made for your moments</p>
+          <h2>Birthdays. Weddings.<br /><em>Just because.</em></h2>
+          <p dir="rtl" class="ar">لكل مناسبة… كيكة تليق بها</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ OFFERINGS ============ -->
+    <section class="offerings" id="offerings">
+      <div class="offerings__head">
+        <p class="eyebrow"><span class="line"></span> The Menu</p>
+        <h2 class="section-title">Four ways to <em>indulge</em></h2>
+      </div>
+      <div class="offerings__grid">
+        <article class="offer tilt">
+          <div class="offer__img"><img src="assets/img/cake12.jpg" alt="" /></div>
+          <span class="offer__num">01</span>
+          <h3>Patisserie</h3>
+          <p class="ar" dir="rtl">حلويات فاخرة</p>
+          <p>Glazed entremets, macarons and chocolate work, finished by hand every morning.</p>
+        </article>
+        <article class="offer tilt">
+          <div class="offer__img"><img src="assets/img/cake7.jpg" alt="" /></div>
+          <span class="offer__num">02</span>
+          <h3>Celebration Cakes</h3>
+          <p class="ar" dir="rtl">كيك المناسبات</p>
+          <p>Birthdays, Mother's Day, gender reveals. Tell us the moment and we design the cake.</p>
+        </article>
+        <article class="offer tilt">
+          <div class="offer__img"><img src="assets/img/cake13.jpg" alt="" /></div>
+          <span class="offer__num">03</span>
+          <h3>Ice Cream</h3>
+          <p class="ar" dir="rtl">بوظة</p>
+          <p>Creamy, small-batch flavours. The perfect companion on our outdoor terrace.</p>
+        </article>
+        <article class="offer tilt">
+          <div class="offer__img"><img src="assets/img/cake6.jpg" alt="" /></div>
+          <span class="offer__num">04</span>
+          <h3>Fresh Juice</h3>
+          <p class="ar" dir="rtl">عصائر طازجة</p>
+          <p>Pressed to order from seasonal Syrian fruit: bright, cold and honest.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- ============ STATS ============ -->
+    <section class="stats">
+      <div class="stat">
+        <span class="stat__num" data-count="96">0</span><span class="stat__unit">%</span>
+        <p>of guests recommend Empress</p>
+      </div>
+      <div class="stat">
+        <span class="stat__num" data-count="289">0</span><span class="stat__unit">+</span>
+        <p>public reviews</p>
+      </div>
+      <div class="stat">
+        <span class="stat__num" data-count="3">0</span>
+        <p>ways to enjoy: dine-in, terrace &amp; pickup</p>
+      </div>
+    </section>
+
+    <!-- ============ GALLERY ============ -->
+    <section class="gallery" id="gallery">
+      <div class="gallery__head">
+        <p class="eyebrow"><span class="line"></span> Gallery</p>
+        <h2 class="section-title">A feast for the <em>eyes</em></h2>
+      </div>
+      <div class="gallery__cols">
+        <div class="gallery__col" data-gspeed="-12">
+          <img src="assets/img/cake1.jpg" alt="" /><img src="assets/img/cake8.jpg" alt="" /><img src="assets/img/cake3.jpg" alt="" /><img src="assets/img/cake5.jpg" alt="" />
+        </div>
+        <div class="gallery__col" data-gspeed="10">
+          <img src="assets/img/cake4.jpg" alt="" /><img src="assets/img/cake13.jpg" alt="" /><img src="assets/img/cake10.jpg" alt="" /><img src="assets/img/cake2.jpg" alt="" />
+        </div>
+        <div class="gallery__col" data-gspeed="-18">
+          <img src="assets/img/cake7.jpg" alt="" /><img src="assets/img/cake11.jpg" alt="" /><img src="assets/img/cake6.jpg" alt="" /><img src="assets/img/cake12.jpg" alt="" />
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CUSTOM CTA ============ -->
+    <section class="custom" id="custom">
+      <div class="custom__inner">
+        <div class="custom__text">
+          <p class="eyebrow"><span class="line"></span> Pre-order · طلب مسبق</p>
+          <h2 class="section-title">Your cake,<br /><em>your way.</em></h2>
+          <p class="custom__ar" dir="rtl">اختَر الشكل، الحشوات، ونوع الشوكولا… وشاهد كيكتك قبل أن نصنعها</p>
+          <ul class="custom__list">
+            <li>6 shapes, from heart to number cakes and tiers</li>
+            <li>7 sponges · 12 fillings · 6 chocolates</li>
+            <li>Live preview of your design</li>
+          </ul>
+          <a href="preorder.html" class="btn btn--dark magnetic"><span>Start Designing</span></a>
+        </div>
+        <a href="preorder.html" class="custom__visual" data-cursor="Design">
+          <img src="assets/img/cake7.jpg" alt="Custom Empress cake" />
+          <span class="custom__chip custom__chip--a">Heart · قلب</span>
+          <span class="custom__chip custom__chip--b">Pistachio · فستق</span>
+          <span class="custom__chip custom__chip--c">Ruby chocolate</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- ============ VISIT ============ -->
+    <section class="visit" id="visit">
+      <div class="visit__inner">
+        <p class="eyebrow eyebrow--light"><span class="line"></span> Visit &amp; Order</p>
+        <h2 class="visit__title"><span class="split-line"><span>Your table</span></span><span class="split-line"><span>is <em>waiting</em>.</span></span></h2>
+        <div class="visit__grid">
+          <div class="visit__card">
+            <h4>Location</h4>
+            <p>Damascus, Syria</p>
+            <p class="ar" dir="rtl">دمشق، سوريا</p>
+          </div>
+          <div class="visit__card">
+            <h4>Call / WhatsApp</h4>
+            <p><a href="tel:+963985122225" dir="ltr">+963 985 122 225</a></p>
+            <p class="muted">Call for today's hours</p>
+          </div>
+          <div class="visit__card">
+            <h4>Experience</h4>
+            <p>Dine-in · Outdoor seating<br />In-store pickup</p>
+          </div>
+          <div class="visit__card">
+            <h4>Follow</h4>
+            <p><a href="https://www.instagram.com/empresspatiseeriee/" target="_blank" rel="noopener">Instagram</a></p>
+            <p><a href="https://www.facebook.com/Empresspatisserie/" target="_blank" rel="noopener">Facebook</a></p>
+          </div>
+        </div>
+        <a href="https://wa.me/963985122225" target="_blank" rel="noopener" class="btn btn--gold magnetic visit__cta"><span>Order Your Cake on WhatsApp</span></a>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="footer__big" aria-hidden="true">
+      <span>E</span><span>M</span><span>P</span><span>R</span><span>E</span><span>S</span><span>S</span>
+    </div>
+    <div class="footer__row">
+      <p>© <span id="year"></span> Empress Patisserie · Damascus</p>
+      <p class="ar" dir="rtl">حلويات امبريس</p>
+      <a href="#top" class="footer__top">Back to top ↑</a>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha384-g4NTh/Iv5PPU4xPyhEWqPcwtNXOvdaDI8LLnyYfyNZOjKJeYQyjzQ9X5275eBjpt" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" integrity="sha384-Z3REaz79l2IaAZqJsSABtTbhjgOUYyV3p90XNnAPCSHg3EMTz1fouunq9WZRtj3d" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js" integrity="sha384-B2WBjDzEjJpYvhmi2UyEn7rektqkf5suS6sNoyyrf0EBAwBHdkiXxIlU0V5Ru2ed" crossorigin="anonymous"></script>
+  <script src="main.js"></script>
+</body>
+</html>
