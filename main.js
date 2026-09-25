@@ -122,26 +122,32 @@
     document.body.classList.add('is-loading');
     lenis?.stop();
     const counter = { v: 0 };
-    const crownParts = $$('.loader__crown path, .loader__crown line, .loader__crown circle');
-    crownParts.forEach(p => { const l = p.getTotalLength ? p.getTotalLength() : 300; p.style.strokeDasharray = l; p.style.strokeDashoffset = l; });
+    const logoParts = $$('.loader__logo g path');
+    logoParts.forEach(p => { const l = p.getTotalLength(); p.style.strokeDasharray = l; p.style.strokeDashoffset = l; });
+    // one compound path (holes intact) for the final solid logo
+    $('.loader__fill').setAttribute('d', logoParts.map(p => p.getAttribute('d')).join(' '));
 
+    const draw = { strokeDashoffset: 0, ease: 'power1.inOut' };
     const tl = gsap.timeline();
-    tl.to(crownParts, { strokeDashoffset: 0, duration: 1.6, stagger: .08, ease: 'power2.inOut' })
-      .from('.loader__word span', { yPercent: 110, duration: 1, stagger: .06, ease: 'power4.out' }, .3)
-      .from('.loader__sub', { opacity: 0, y: 10, duration: .8 }, .9)
-      .to(counter, { v: 100, duration: 2.2, ease: 'power2.inOut', onUpdate: () => { $('#loaderCount').textContent = Math.round(counter.v); } }, 0)
-      .to('.loader__crown path', { fill: 'rgba(198,161,91,.25)', duration: .5 }, 1.6)
-      .to('.loader__inner', { opacity: 0, y: -30, duration: .6, ease: 'power2.in' }, 2.5)
-      .to('.loader__count', { opacity: 0, duration: .4 }, 2.5)
-      .to('.loader__panel--top', { yPercent: -100, duration: 1.2, ease: 'expo.inOut' }, 2.9)
-      .to('.loader__panel--bottom', { yPercent: 100, duration: 1.2, ease: 'expo.inOut' }, 2.9)
+    tl.to('.logo-draw__frame path', { ...draw, duration: 1.8, stagger: .15 }, 0)
+      .to('.logo-draw__crown path', { ...draw, duration: 1, stagger: .2 }, .5)
+      .to('.logo-draw__word path', { ...draw, duration: .9, stagger: .12 }, .9)
+      .to('.logo-draw__script path', { ...draw, duration: .6, stagger: .05 }, 1.6)
+      .to(counter, { v: 100, duration: 3, ease: 'power2.inOut', onUpdate: () => { $('#loaderCount').textContent = Math.round(counter.v); } }, 0)
+      .to('.loader__fill', { opacity: 1, duration: .7, ease: 'power2.out' }, 2.9)
+      .to(logoParts, { strokeOpacity: 0, duration: .7 }, 3.1)
+      .to('.loader__logo', { scale: 1.04, duration: 1, ease: 'power2.out' }, 2.9)
+      .to('.loader__inner', { opacity: 0, y: -30, duration: .6, ease: 'power2.in' }, 4)
+      .to('.loader__count', { opacity: 0, duration: .4 }, 4)
+      .to('.loader__panel--top', { yPercent: -100, duration: 1.2, ease: 'expo.inOut' }, 4.4)
+      .to('.loader__panel--bottom', { yPercent: 100, duration: 1.2, ease: 'expo.inOut' }, 4.4)
       .add(() => {
         loader.remove();
         document.body.classList.remove('is-loading');
         lenis?.start();
         ScrollTrigger.refresh();
       })
-      .add(heroIntro(), 3.1);
+      .add(heroIntro(), 4.6);
   } else {
     loader?.remove();
     if ($('.hero')) heroIntro();

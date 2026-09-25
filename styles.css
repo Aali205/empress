@@ -88,13 +88,11 @@ body::after {
 .loader__panel--top { top: 0; }
 .loader__panel--bottom { bottom: 0; }
 .loader__inner { text-align: center; color: var(--cream); }
-.loader__crown { width: 88px; margin: 0 auto 18px; overflow: visible; }
-.loader__crown path, .loader__crown line, .loader__crown circle {
-  fill: none; stroke: var(--gold); stroke-width: 2.2; stroke-linejoin: round; stroke-linecap: round;
+.loader__logo { display: block; width: min(560px, 82vw); height: auto; overflow: visible; }
+.loader__logo g path {
+  fill: none; stroke: var(--gold); stroke-width: 5; stroke-linejoin: round; stroke-linecap: round;
 }
-.loader__word { font-family: var(--caps); font-size: clamp(2.6rem, 8vw, 5.5rem); letter-spacing: .12em; display: flex; justify-content: center; overflow: hidden; line-height: 1.1; }
-.loader__word span { display: inline-block; }
-.loader__sub { font-family: var(--serif); font-style: italic; color: var(--gold-2); font-size: 1.2rem; margin-top: 6px; }
+.loader__fill { fill: var(--cream); fill-rule: evenodd; opacity: 0; }
 .loader__count { position: fixed; right: var(--pad); bottom: 32px; font-family: var(--serif); font-size: clamp(3rem, 8vw, 6rem); color: var(--gold); line-height: 1; }
 
 /* ---------- cursor ---------- */
